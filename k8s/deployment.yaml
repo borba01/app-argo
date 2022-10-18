@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: goapp
+  namespace: app-argo
 spec:
   replicas: 1
   selector:
@@ -14,6 +15,6 @@ spec:
     spec:
       containers:
       - name: goapp
-        image: goapp
+        image: marcosborba01/app-argo:1.0
         ports:
         - containerPort: 8080
